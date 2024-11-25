@@ -1,0 +1,14 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+<h1>Books</h1>
+<ul>
+    <li>
+        <a href="{% url 'update-book' book.id %}">{{ book.title }}</a> |
+        <a href="{% url 'delete-book' book.id %}">Delete</a>
+    </li>
+</ul>
+<a href="{% url 'create-book' %}">Add New Book</a>
+{% endblock %}

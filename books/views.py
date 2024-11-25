@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'books/book_list.html')
 
 def book_list(request):
-    books = Book.objects.all()
+    books = Book.objects.all()[:10]
     context = {'books': books}
     return render(request, 'books/book_list.html', context)
 
@@ -149,6 +149,6 @@ def search_books(request):
     else:
         books = ''
     context = {'books': books, 'query': q}
-    return render(request, 'search_results.html', context)
+    return render(request, 'books/book_list.html', context)
 
 # Аналогичные функции для других моделей (Author, Publisher, Genre, User)

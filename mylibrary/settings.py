@@ -74,6 +74,12 @@ WSGI_APPLICATION = 'mylibrary.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+ELASTICSEARCH_DSL = {
+    "default": {
+        "hosts": ["localhost"],
+    },
+}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
