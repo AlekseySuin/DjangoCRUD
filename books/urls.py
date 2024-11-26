@@ -20,6 +20,9 @@ urlpatterns = [
     path('publisher/<int:pk>/update/', views.update_publisher, name='update-publisher'),
     path('publisher/<int:pk>/delete/', views.delete_publisher, name='delete-publisher'),
 
+    path('zapros/oldestbook/', views.the_oldest_book, name='oldest-book'),
+    path('zapros/newsbook/', views.the_news_book, name='news-book'),
+
     path('search/', views.search_books, name='search-books'),
     # Аналогичные маршруты для других моделей (Author, Publisher, Genre, User)
 ]

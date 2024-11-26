@@ -1,17 +1,17 @@
 {% extends 'books/base.html' %}
 
-{% block title %}Update Book: {{ book.title }}{% endblock %}
+{% block title %}Изменить книгу: {{ book.title }}{% endblock %}
 
 {% block content %}
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-6">
-            <h2>Update Book: {{ book.title }}</h2>
+            <h2>Изменить книгу: {{ book.title }}</h2>
             <form method="post" novalidate>
                 {% csrf_token %}
                 {{ form.as_p }}
-                <button type="submit" class="btn btn-primary">Save Changes</button>
-                <a href="{% url 'book-list' %}" class="btn btn-secondary">Back to Books</a>
+                <button type="submit" class="btn btn-primary">Сохранить изменения</button>
+                <a href="{% url 'book-list' %}" class="btn btn-secondary">Вернуться к каталогу книг</a>
             </form>
         </div>
     </div>

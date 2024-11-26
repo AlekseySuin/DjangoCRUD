@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'books',
+    'django_elasticsearch_dsl',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'mylibrary.wsgi.application'
 
 ELASTICSEARCH_DSL = {
     "default": {
-        "hosts": ["localhost"],
+        "hosts": ["https://localhost:8000"],
     },
 }
 

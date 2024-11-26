@@ -3,6 +3,12 @@
 {% block title %}Book List{% endblock %}
 {% block content %}
   <main class="books-container">
+      <h2>Поиск</h2>
+       <form method="post" novalidate>
+            {% csrf_token %}
+            <input type="text" name="q">
+            <button type="submit">Поиск</button>
+        </form>
         {% for book in books %}
         <a href="{% url 'update-book' book.id %}">
             <div class="book-card">

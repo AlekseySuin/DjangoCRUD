@@ -11,7 +11,28 @@ def index(request):
 def book_list(request):
     books = Book.objects.all()
     context = {'books': books}
+    q = request.POST.get('q')
+    if request.method == 'POST':
+        if q:
+            books = BookDocument.search().query(
+                'multi_match', query=q, fiels=['title', 'author.first_name','author.last_name'])
+        else:
+            books = ''
+        context = {'books': books, 'query': q}
+
     return render(request, 'books/book_list.html', context)
+
+def the_oldest_book(request):
+    books = Book.objects.all().order_by('published_date')[:1]
+    context = {'books': books}
+    return render(request, 'books/book_list.html', context)
+
+def the_news_book(request):
+    books = Book.objects.all().order_by('-published_date')[:1]
+    new_book = Book.objects.all().count()
+    context = {'books': books}
+    return render(request, 'books/book_list.html', context)
+
 
 def create_book(request):
     form = BookForm(request.POST or None)
