@@ -4,10 +4,25 @@
     <meta charset="UTF-8">
     <title>{% block title %}{% endblock %}</title>
     {% load static %}
-    <link rel="stylesheet" href="{% static 'books/static/styles.css' %}">
+    <link href="{% static 'books/css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'books/css/books.css' %}" rel="stylesheet">
 </head>
 <body>
+    <header class="fixed-header">
+        <nav>
+            <a href="/books">Главная</a>
+            <a href="/authors/create/">Добавить автора</a>
+            <a href="/publisher/create/">Добавить издателя</a>
+            <a href="/genre/create/">Добавить жанр</a>
+            <a href="/books/create/">Добавить книгу</a>
+        </nav>
+    </header>
     {% block content %}
     {% endblock %}
+
+    <footer>
+        <p>© Библиотека</p>
+    </footer>
+    <script src="{% static 'books/js/scripts.js' %}"></script>
 </body>
 </html>

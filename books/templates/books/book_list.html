@@ -1,16 +1,29 @@
 {% extends 'books/base.html' %}
-
+{% load static %}
 {% block title %}Book List{% endblock %}
-
 {% block content %}
-<h1>Books</h1>
+  <main class="books-container">
+        {% for book in books %}
+        <a href="{% url 'update-book' book.id %}">
+            <div class="book-card">
+            <h2 class="book-title">{{ book.title }}</h2>
+            <p class="book-author">Автор: {{ book.author }}</p>
+            <p class="book-publisher">Издатель: {{ book.publisher }}</p>
+            <p class="book-genre">Жанр: {{ book.genre }}</p>
+            <a href="{% url 'delete-book' book.id %}"><p>Удалить книгу</p></a>
+        </div></a>
+        {% endfor %}
+    </main>
+<!--
+<h1>Книги</h1>
 <ul>
     {% for book in books %}
     <li>
         <a href="{% url 'update-book' book.id %}">{{ book.title }}</a> |
-        <a href="{% url 'delete-book' book.id %}">Delete</a>
+        <a href="{% url 'delete-book' book.id %}">Удалить</a>
     </li>
     {% endfor %}
 </ul>
-<a href="{% url 'create-book' %}">Add New Book</a>
+!-->
+<a href="{% url 'create-book' %}">Добавить новую книгу</a>
 {% endblock %}

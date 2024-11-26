@@ -9,7 +9,7 @@ def index(request):
     return render(request, 'books/book_list.html')
 
 def book_list(request):
-    books = Book.objects.all()[:10]
+    books = Book.objects.all()
     context = {'books': books}
     return render(request, 'books/book_list.html', context)
 

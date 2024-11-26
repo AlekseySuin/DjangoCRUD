@@ -1,0 +1,43 @@
+/* Стили для header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 0;
+    text-align: center;
+}
+
+/* Стили для главного блока */
+.books-container {
+    margin-top: 80px; /* Учитываем высоту фиксированного заголовка */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 40px;
+}
+
+/* Стили для карточек книг */
+.book-card {
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.book-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.book-author,
+.book-publisher,
+.book-genre {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 5px;
+}
